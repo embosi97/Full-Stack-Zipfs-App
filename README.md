@@ -22,7 +22,7 @@ The Bokeh Visualization Library is utilized to create an interactive Zipf's grap
 
 The graph can be zoomed in on/expanded, allows for scrolling, and hovering over the individual points on the scatter plot will display the word's exact number of occurrances (I.e. Word 'the' has 2450 occurances). 
 
-An algorithm is used to calculate the theoretically perfect Zipf's graph to the words' actual frequencies, which then produces a similarity percentage.
+An algorithm produces a similarity percentage to a theoretically “perfect” Zipf's graph, which essentially compares the words' actual frequencies to those of the aforementioned perfect graph.
 
 ![Alt text](https://i.imgur.com/H1ZjWhh.png?raw=true "Graph for FILE")
 
