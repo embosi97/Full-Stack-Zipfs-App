@@ -34,6 +34,7 @@ the last modified date, the similarity percentage, and the language of the site.
 This information is saved to a PostgreSQL database and is updated if the site has been modified. If there is no conflict with modified dates, the appropriate information is pulled from
 the database and used without need of updating. This process works seamlessly and saves time.
 
+This is how saved sites are seen from pgAdmin4
 ![Alt text](https://i.imgur.com/QFPnN4R.png?raw=true "Graph for Site")
 
 If you're unfamiliar with how Zipf's Law works, please watch this video by VSauce
