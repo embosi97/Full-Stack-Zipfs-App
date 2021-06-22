@@ -16,7 +16,7 @@ If the language is not valid for that particular site (i.e. selecting German for
 
 ![Alt text](https://i.imgur.com/hhtkVob.png?raw=true "Selection page")
 
-Supported file extensions are '.txt', '.html', '.png', '.jpeg', '.jpg', '.doc', '.docx', and '.pdf'. 
+Supported file extensions are '.txt', '.html', '.png', '.jpeg', '.jpg', '.gif', '.bmp', '.tiff', '.doc', '.docx', and '.pdf'. 
 
 The Bokeh Visualization Library is utilized to create an interactive Zipf's graph that displays the top one hundred words, their frequencies, and their corresponding rank.
 
