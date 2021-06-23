@@ -237,7 +237,8 @@ def parseFile(file):
                 count.update(text.split(" "))
 
     #In the case an image containing text is passed through
-    elif extension == '.png' or extension == '.jpeg' or extension == '.jpg':
+    elif (extension == '.png' or extension == '.jpeg' or extension == '.jpg'
+    or extension == '.gif' or extension == '.bmp' or extension == '.tiff'):
         #Python-tesseract is an optical character recognition (OCR) tool for python.
         #It will recognize and “read” the text embedded in images.
         stringBuilder = pytesseract.image_to_string(Image.open(file))
@@ -250,7 +251,7 @@ def parseFile(file):
                 count.update(text.split(" "))
 
     #If count is empty (when Django phase begins) or the extension is not supported
-    elif extension not in ['.txt', '.html', '.png', '.jpeg', '.jpg', '.doc', '.docx', '.pdf']:
+    elif extension not in ['.txt', '.html', '.png', '.jpeg', '.jpg', '.doc', '.docx', '.pdf', '.gif', '.bmp', '.tiff']:
         return 0
 
     return count if len(count) > 10 else 0
