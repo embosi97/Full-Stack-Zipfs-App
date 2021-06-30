@@ -38,9 +38,11 @@ This is how saved sites are seen from pgAdmin4
 ![Alt text](https://i.imgur.com/TLK4sTN.png?raw=true "Graph for Site")
 
 I made a custom 404 error page by turning debug mode off and setting up a handler404 error view (which overrides the The page_not_found() view)
+
 ![Alt text](https://i.imgur.com/61hg9VW.png?raw=true "404 error page")
 
 Links to my GitHub, LinkedIn, and Personal Portfolio site accessable via the dropdown in my navigation bar
+
 ![Alt text](https://i.imgur.com/fVSeTib.png?raw=true "links")
 
 If you're unfamiliar with how Zipf's Law works, please watch this video by VSauce
