@@ -14,7 +14,7 @@ site and can choose the language of the provided site. Validated words are then 
 
 If the language is not valid for that particular site (i.e. selecting German for Elpais.com), the user will be redirected to this page.
 
-![Alt text](https://i.imgur.com/hhtkVob.png?raw=true "Selection page")
+![Alt text](https://i.imgur.com/O1UFS5L.png?raw=true "Selection page")
 
 Supported file types include '.txt', '.html', '.png', '.jpeg', '.jpg', '.gif', '.bmp', '.tiff', '.doc', '.docx', '.pdf', and others. 
 
@@ -24,9 +24,9 @@ The graph can be zoomed in on/expanded, allows for scrolling, and hovering over 
 
 An algorithm produces a similarity percentage to a theoretically “perfect” Zipf's graph, which essentially compares the words' actual frequencies to those of the aforementioned perfect graph all relative to highest rank word.
 
-![Alt text](https://i.imgur.com/H1ZjWhh.png?raw=true "Graph for FILE")
+![Alt text](https://i.imgur.com/9N7cPxv.png?raw=true "Graph for FILE")
 
-![Alt text](https://i.imgur.com/M5FpUlX.png?raw=true "Graph for Site")
+![Alt text](https://i.imgur.com/PARe1mB.png?raw=true "Graph for Site")
 
 Database models were used for storing inputted sites and their information, which includes the URL itself, the dictionary the words and the frequencies are stored in,
 the last modified date, the similarity percentage, and the language of the site.
@@ -35,7 +35,13 @@ This information is saved to a PostgreSQL database and is updated if the site ha
 the database and used without need of updating. This process works seamlessly and saves time.
 
 This is how saved sites are seen from pgAdmin4
-![Alt text](https://i.imgur.com/QFPnN4R.png?raw=true "Graph for Site")
+![Alt text](https://i.imgur.com/TLK4sTN.png?raw=true "Graph for Site")
+
+I made a custom 404 error page by turning debug mode off and setting up a handler404 error view (which overrides the The page_not_found() view)
+![Alt text](https://i.imgur.com/61hg9VW.png?raw=true "404 error page")
+
+Links to my GitHub, LinkedIn, and Personal Portfolio site accessable via the dropdown in my navigation bar
+![Alt text](https://i.imgur.com/fVSeTib.png?raw=true "links")
 
 If you're unfamiliar with how Zipf's Law works, please watch this video by VSauce
 https://www.youtube.com/watch?v=fCn8zs912OE
