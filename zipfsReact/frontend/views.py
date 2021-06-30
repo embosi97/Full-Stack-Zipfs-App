@@ -55,6 +55,10 @@ def HomePage(request):
 def HubPage(request):
     return render(request, 'build/zhub.html')
 
+#Custom 404 page
+def unknownHandler(request, exception):
+    return render(request, 'build/not-found.html')
+
 #Returns a shortened URL
 def truncateURL(url):
     #If the url string has a normal schema, make url into a substring of itself
@@ -164,7 +168,7 @@ def parseSite(lang, url):
     return count if len(count) > 10 else 0
 
 #This function parses files instead of URL
-#Supported files include '.txt', '.html', '.png', '.jpeg', '.jpg', '.doc', '.docx', and '.pdf'
+#Supported files include '.txt', '.html', '.png', '.jpeg', '.jpg', '.gif', '.bmp', '.tiff', '.doc', '.docx', and '.pdf'
 def parseFile(file):
 
     #Getting the filename and extension by splitting text
@@ -331,7 +335,7 @@ def generateChart(request):
 
                     zObject.save()
 
-                    return render(request, 'build/generatedZipf.html', {'percent': percent, 'script': script, 'div': div})
+                    return render(request, 'build/generatedZipf.html', {'percent': percent, 'script': script, 'div': div, 'type': 'site'})
 
                 else:
                     #If there is no conflict with the modified dates, just pass the pulled object
@@ -341,7 +345,7 @@ def generateChart(request):
                     percent = zObject.percent
                     script, div = createBokehPlot(url, hash, list(hash.values()))
 
-                    return render(request, 'build/generatedZipf.html', {'percent': percent, 'script': script, 'div': div})
+                    return render(request, 'build/generatedZipf.html', {'percent': percent, 'script': script, 'div': div, 'type': 'site'})
 
             #In the case the object doesn't exist in the DB, simply make a new ZInfo object in the DB
             except ZInfo.DoesNotExist:
@@ -392,7 +396,7 @@ def generateChart(request):
                 #Saving the newly created ZInfo object to the DB
                 zObject.save()
 
-                return render(request, 'build/generatedZipf.html', {'percent': percent, 'script': script, 'div': div})
+                return render(request, 'build/generatedZipf.html', {'percent': percent, 'script': script, 'div': div, 'type': 'site'})
         #In the case it's a File instead of a URL
         #File-based information will not be saved into the database
         else:
@@ -424,7 +428,7 @@ def generateChart(request):
 
             percent = f'{percent}%'
 
-            return render(request, 'build/generatedZipf.html', {'percent': percent, 'script': script, 'div': div})
+            return render(request, 'build/generatedZipf.html', {'percent': percent, 'script': script, 'div': div, 'type': 'file'})
     #Checks for MultiValueDictKeyError which usually happens when no value is given for the URL
     except (MultiValueDictKeyError):
 

@@ -20,3 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('frontend.urls')),
 ]
+#custom 404 page
+handler404 = "frontend.views.unknownHandler"
